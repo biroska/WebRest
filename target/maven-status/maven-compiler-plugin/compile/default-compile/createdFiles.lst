@@ -1,0 +1,6 @@
+resources/HelloWorldResource.class
+service/BandaService.class
+resources/BandaResource.class
+beans/Album.class
+beans/Banda.class
+DAO/BandaDAO.class
