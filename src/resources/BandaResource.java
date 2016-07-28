@@ -53,5 +53,12 @@ public class BandaResource {
 	public String deleteBanda( @PathParam("id")  int id ) {
 		return service.deleteBanda( id ) == true ? "Banda removida." : "Banda nao encontrada.";
 	}
+	
+	@DELETE
+	@Path("{idBanda}/{idAlbum}")
+	@Produces("text/plain")
+	public String deleteAlbum( @PathParam("idBanda")  int idBanda, @PathParam("idAlbum")  int idAlbum ) {
+		return service.deleteAlbum( idBanda, idAlbum ) == true ? "Album removido." : "Album nao encontrado.";
+	}
 
 }

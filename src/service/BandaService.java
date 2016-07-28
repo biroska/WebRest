@@ -29,4 +29,8 @@ public class BandaService {
 		return dao.deleteBanda( id );
 	}
 	
+	public boolean deleteAlbum( int idBanda, int idAlbum ) {
+		return dao.deleteAlbum( idBanda, idAlbum );
+	}
+	
 }

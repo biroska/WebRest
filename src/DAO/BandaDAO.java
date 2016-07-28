@@ -2,6 +2,7 @@ package DAO;
 
 import java.util.ArrayList;
 
+import beans.Album;
 import beans.Banda;
 
 public class BandaDAO {
@@ -64,6 +65,39 @@ public class BandaDAO {
 		}
 		
 		return false;
+	}
+	
+	public boolean deleteAlbum( int idBanda, int idAlbum ) {
+		
+		Banda bandaAux = null;
+		Album albumAux = null;
+		
+		for (Banda banda : listaBandas) {
+			
+			if (banda.getId() == idBanda ){
+				bandaAux = banda;
+				break;
+			}
+		}
+		
+		if ( bandaAux == null ){
+			return false;
+		}
+		
+		for (Album album : bandaAux.getAlbuns()) {
+			if (album.getId() == idAlbum ){
+				albumAux = album;
+				break;
+			}
+		}
+		
+		if ( albumAux == null ){
+			return false;
+		}
+		
+		bandaAux.getAlbuns().remove( albumAux );
+		
+		return true;
 	}
 	
 }
